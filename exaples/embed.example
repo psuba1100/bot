@@ -1,0 +1,24 @@
+// at the top of your file
+const { MessageEmbed } = require('discord.js');
+
+// inside a command, event listener, etc.
+const pfp = interaction.user.displayAvatarURL()
+const exampleEmbed = new MessageEmbed()
+	.setColor('#fdd835')
+	.setTitle('Some title')
+	.setURL('https://i.imgur.com/iqPeFux.png')
+	.setAuthor({ name: 'Until Sunrise', iconURL: 'https://i.imgur.com/iqPeFux.png', url: 'https://discord.js.org' })
+	.setDescription('Some description here')
+	.setThumbnail('https://i.imgur.com/iqPeFux.png')
+	.addFields(
+		{ name: 'Regular field title', value: 'Some value here' },
+		{ name: '\u200B', value: '\u200B' },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+		{ name: 'Inline field title', value: 'Some value here', inline: true },
+	)
+	.addField('Inline field title', 'Some value here', true)
+	.setImage('https://i.imgur.com/iqPeFux.png')
+	.setTimestamp()
+	.setAuthor({ name: user, iconURL: pfp})({ text: 'Some footer text here', iconURL: pfp });
+
+await interaction.reply({ embeds: [exampleEmbed] });

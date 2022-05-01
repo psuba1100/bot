@@ -1,0 +1,10 @@
+const idBan = interaction.user.id
+const bannedModel = require('../models/bannedSchema')
+var bannedData = await bannedModel.findOne({ userID: idBan });
+
+if (!bannedData) {
+
+}
+else{
+    await interaction.reply('oh no! Looks like your discord account has been banned please conntact our support!')
+}

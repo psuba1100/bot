@@ -1,0 +1,33 @@
+//top of the code 
+const {
+    MessageActionRow,
+    MessageButton,
+    MessageEmbed
+} = require('discord.js');
+
+//execute function
+
+        const row = new MessageActionRow()
+            .addComponents(
+                new MessageButton()
+                .setCustomId('primary')
+                .setLabel('Primary')
+                .setStyle('PRIMARY'),
+                new MessageButton()
+                .setCustomId('secondary')
+                .setLabel('Secondary')
+                .setStyle('SECONDARY'),
+                new MessageButton()
+                .setCustomId('success')
+                .setLabel('Success')
+                .setStyle('SUCCESS'),
+                new MessageButton()
+                .setCustomId('danger')
+                .setLabel('Danger')
+                .setStyle('DANGER'),
+                new MessageButton()
+                .setLabel('Link')
+                .setStyle('LINK')
+                .setURL('http://simonstudios.ga/'),
+            );
+await interaction.reply({content: [UwU], components: [row]})

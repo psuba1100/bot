@@ -1,0 +1,21 @@
+        const collector = interaction.channel.createMessageComponentCollector({
+            componentType: 'BUTTON',
+            time: 15000
+        });
+
+        collector.on('collect', async i => {
+            if (i.user.id === interaction.user.id) {
+                if (i.customId === 'primary') {
+                    await i.update({ content: 'A button was clicked!', components: [], embeds: [] });
+                }
+            } else {
+                i.reply({
+                    content: `These buttons aren't for you!`,
+                    ephemeral: true
+                });
+            }
+        });
+
+        collector.on('end', collected => {
+            console.log(`Collected ${collected.size} interactions.`);
+        });

@@ -1,0 +1,13 @@
+        let user;
+        try{
+            user = data.username
+        }catch{
+            user = interaction.user.tag
+        }
+        
+        const error = new MessageEmbed()
+            .setColor('#d50000')
+            .setAuthor({ name: user, iconURL: pfp})
+            .setTitle('Oh no! I see an error on the horizon!')
+            .setDescription("Looks like you don't have an account. Please use `/login`. If you need list of commands or support, feel free to use `/help`.")
+            .setTimestamp()
